@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Koala🐨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable class-based dark mode
+        theme: {
+          extend: {
+            colors: {
+              'background': '#000000',
+              'primary-text': '#FFFFFF',
+              'secondary-text': '#A1A1A1',
+              'primary-accent': '#FFFFFF',
+              'secondary-accent': '#282828',
+              'success': '#16A34A',
+              'warning': '#CA8A04',
+              'error': '#DC2626',
+              'accent': '#8B5CF6',
+              'accent-blue': '#3b82f6',
+              'accent-green': '#10b981',
+              'accent-orange': '#f97316',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            borderRadius: {
+              'lg': '8px',
+              'xl': '16px',
+            },
+            boxShadow: {
+              'glow': '0 0 15px rgba(139, 92, 246, 0.5)',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    @keyframes borderGlow {
+      0% {
+        box-shadow: 0 0 4px var(--glow-color-start);
+      }
+      50% {
+        box-shadow: 0 0 16px 2px var(--glow-color-end);
+      }
+      100% {
+        box-shadow: 0 0 4px var(--glow-color-start);
+      }
+    }
+    .tool-card:hover {
+        animation: borderGlow 2.5s infinite ease-in-out;
+    }
+    /* Animated Platform Icons */
+    .animated-icon {
+        transition: transform 0.3s ease-in-out;
+    }
+    .tool-card:hover .animated-icon.linkedin-icon {
+        transform: scale(1.15) rotate(-5deg);
+    }
+    .tool-card:hover .animated-icon.x-icon {
+        transform: scale(1.15) rotate(5deg);
+    }
+    .tool-card:hover .animated-icon.gbp-icon {
+        transform: scale(1.15);
+    }
+    .tool-card:hover .animated-icon.instagram-icon {
+        transform: scale(1.15) rotate(-5deg);
+    }
+    .tool-card:hover .animated-icon.facebook-icon {
+        transform: scale(1.15) translateY(-2px);
+    }
+    .instagram-gradient stop {
+        transition: stop-color 0.3s ease-in-out;
+    }
+    .tool-card:hover .instagram-gradient-stop-1 {
+        stop-color: #f09433;
+    }
+    .tool-card:hover .instagram-gradient-stop-2 {
+        stop-color: #cc2366;
+    }
+    .tool-card:hover .instagram-gradient-stop-3 {
+        stop-color: #bc1888;
+    }
+    @keyframes iconGlow {
+      0%, 100% {
+        box-shadow: 0 0 6px rgba(139, 92, 246, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 18px rgba(139, 92, 246, 0.8);
+      }
+    }
+    .glowing-icon {
+      animation: iconGlow 4s infinite ease-in-out;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 text-gray-600 font-sans dark:bg-background dark:text-secondary-text">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
